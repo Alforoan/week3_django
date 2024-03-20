@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ author.name }} - Author Detail{% endblock %}
+
+{% block content %}
+<main>
+    <h1>{{ author.name }}</h1>
+    <div>
+        <p><strong>Date of Birth:</strong> {{ author.date_of_birth }}</p>
+        <p><strong>Biography:</strong> {{ author.biography }}</p>
+        <p><strong>Books:</strong></p>
+        <ul>
+            {% for book in author.books.all %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+{% endblock %}
